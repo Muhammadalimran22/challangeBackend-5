@@ -1,0 +1,105 @@
+### REGISTER
+POST http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "name":"imranKerenKeceBadai3",
+    "email":"muhammadalimran24@mail.com",
+    "password":"imran12345",
+    "password_confirmation":"imran12345",
+    "profile": {
+      "identifyType": "KTP",
+      "identifyNumber": "20022312",
+      "address": "LANGSA"
+  }
+}
+
+### LOGIN
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email":"muhammadalimran24@mail.com",
+    "password":"imran12345"
+}
+
+### WHOAMI
+GET http://localhost:3000/api/v1/auth/whoami
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+
+
+### GET ALL USER, GET BYID USERS, PAGENATION USERS, DELETE AND UPDATE 
+#====================================================================
+GET http://localhost:3000/api/v1/users
+Authorization: 
+
+###
+GET http://localhost:3000/api/v1/users/12
+Authorization:
+
+
+###
+GET http://localhost:3000/api/v1/pagination-user?limit=5&page=1
+Authorization: 
+
+###
+DELETE http://localhost:3000/api/v1/users/5
+Authorization: 
+
+
+### POST ACCOUNT, GET ACCCOUNT, GET ALL ACCOUNT,  GET BYID ACCOUNT, DELETE AND UPDATE
+#============================================================================
+POST http://localhost:3000/api/v1/accounts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+Content-Type: application/json
+
+{
+  "userId": 3,
+  "bankName": "BTN",
+  "bankAccountNumber": "231140",
+  "balance": 250000.00
+}
+
+###
+GET http://localhost:3000/api/v1/accounts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+
+###
+GET http://localhost:3000/api/v1/accounts/1
+Authorization: 
+
+###
+DELETE http://localhost:3000/api/v1/accounts/16
+Authorization: 
+
+###
+PUT http://localhost:3000/api/v1/accounts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+Content-Type: application/json
+
+{
+  "bankName": "ACEH",
+  "bankAccountNumber": "231120",
+  "balance": 500000.00
+}
+
+
+### POST TRANSAKSI, GET TRANSAKSI, GET TRANSAKSI BY ID
+#======================================================
+POST http://localhost:3000/api/v1/transactions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+Content-Type: application/json
+
+{
+  "sourceAccountId": 2,
+  "destinasiAccountId": 1,
+  "amount": 20000
+}
+
+###
+GET http://localhost:3000/api/v1/transactions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzY1ODEwfQ.gFa2ZqLX7pEX1QzCO6HT6jo9pE7tQl8u6w0Lz5-vO_4
+
+###
+GET http://localhost:3000/api/v1/transactions/3
+Authorization: 
