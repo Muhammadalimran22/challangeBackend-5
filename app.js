@@ -18,6 +18,15 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1", usersRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.get("/", (req, res) => {
+  return res.json({
+    status: true,
+    message: "hello word",
+    err: null,
+    data: null,
+  });
+});
+
 // 404 error handling
 app.use((req, res, next) => {
   res.status(404).json({
